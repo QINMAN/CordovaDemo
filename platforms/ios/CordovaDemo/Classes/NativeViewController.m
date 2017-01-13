@@ -24,20 +24,21 @@
 }
 
 - (void)showArgument {
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 100, 200, 20)];
-    label.text = self.str;
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 100, 300, 20)];
+    label.text = [NSString stringWithFormat:@"js 传值给原生:%@",self.str];
     label.textColor = [UIColor blackColor];
     [self.view addSubview:label];
 }
+
 - (IBAction)transferValueByPlugin:(UIButton *)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"soHigh" object:@"transferValueByPlugin"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"soHigh" object:@"原生传值给 js :使用CDVPluginResult"];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)transferValue:(UIButton *)sender {
     for (UIViewController *vc in self.navigationController.viewControllers) {
         if ([vc isKindOfClass:[MainViewController class]]) {
-            ((MainViewController *)vc).backMessage = @"transferValue";
+            ((MainViewController *)vc).backMessage = @"原生传值给 js :直接执行JS";
             ((MainViewController *)vc).isRefresh = YES;
             [self.navigationController popToViewController:vc animated:YES];
         }

@@ -53,25 +53,15 @@
     return self;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-
-    // Release any cached data, images, etc that aren't in use.
-}
-
 #pragma mark View lifecycle
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    // View defaults to full size.  If you want to customize the view's size, or its subviews (e.g. webView),
-    // you can do so here.
-
     [super viewWillAppear:animated];
-    if (self.isRefresh) {
+    if (self.isRefresh) {//需要给 h5 传值的时候 isRefresh 为 YES
         NSString *location = [NSString stringWithFormat:@"callBack('%@')",self.backMessage];
-        [(UIWebView *)self.webView stringByEvaluatingJavaScriptFromString:location];
+//        [(UIWebView *)self.webView stringByEvaluatingJavaScriptFromString:location];
+        [self.commandDelegate evalJs:location];
     }
 }
 

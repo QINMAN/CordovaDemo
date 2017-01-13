@@ -20,17 +20,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLC-8b-S0R">
-                    <rect key="frame" x="151" y="178" width="46" height="30"/>
+                    <rect key="frame" x="72" y="178" width="230" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="方法一"/>
+                    <state key="normal" title="方法一：使用CDVPluginResult"/>
                     <connections>
                         <action selector="transferValueByPlugin:" destination="-1" eventType="touchUpInside" id="dTp-Pd-Jan"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rji-pf-V90">
-                    <rect key="frame" x="151" y="268" width="46" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rji-pf-V90" userLabel="方法二：执行JS">
+                    <rect key="frame" x="56" y="248" width="262" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="方法二"/>
+                    <state key="normal" title="方法二：直接执行JS"/>
                     <connections>
                         <action selector="transferValue:" destination="-1" eventType="touchUpInside" id="pEl-bb-ld6"/>
                     </connections>
